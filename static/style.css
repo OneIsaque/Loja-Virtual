@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #9e34db; /* Azul */
+    color: white;
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #2522e6; /* Laranja */
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+
+    box-shadow: #3b2d42 0px 3px 8px;
+}
+
+.btn:hover {
+    background-color: #1f246e; /* Verde */
+    color: rgb(233, 192, 229);
+}
+
+/* menssagem de feedback ao realizar alguma ação */
+.flash-messages {
+    margin: 10px 0;
+}
+
+.flash.success {
+    color: green;
+    font-weight: bold;
+}
+
+.flash.error {
+    color: red;
+    font-weight: bold;
+}
+
+/*  */
+
+
+.container {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 20px;
+
+    border-radius: 2px;
+    border: rgb(160, 160, 160) solid 1px;
+    box-shadow: 0 3px 23px rgba(0, 0, 0, 0.637);
+}

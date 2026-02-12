@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Finalização</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header><h2>Compra finalizada!</h2></header>
+    <main>
+        <p>Total pago: R${{ total }}</p>
+        <a class="btn" href="/">Nova compra</a>
+    </main>
+</body>
+</html>

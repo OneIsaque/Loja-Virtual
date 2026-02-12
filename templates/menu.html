@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu de Produtos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <header>
+        <h2>Produtos disponíveis</h2>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %} 
+            {% if messages %} 
+                <div class="flash-messages"> 
+                    {% for category, message in messages %} 
+                        <p class="flash {{ category }}">{{ message }}
+
+                        </p> 
+                    {% endfor %} 
+                </div> 
+            {% endif %}
+        {% endwith %}
+
+
+        <ul>
+            {% for p in produtos %}
+                <li>{{ p.nome }} - R${{ p.preco }} (Estoque: {{ p.estoque }})
+                <a class="btn" href="/add/{{ p.id }}">Adicionar</a></li>
+            {% endfor %}
+        </ul>
+        <a class="btn" href="/cart">Ir para carrinho</a>
+        
+    </main>
+</body>
+</html>

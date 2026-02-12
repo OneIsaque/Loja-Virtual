@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header><h2>Carrinho de Compras</h2></header>
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %} 
+            {% if messages %} 
+                <div class="flash-messages"> 
+                    {% for category, message in messages %} 
+                        <p class="flash {{ category }}">{{ message }}</p> 
+                    {% endfor %} 
+                </div> 
+            {% endif %} 
+        {% endwith %}
+
+       <ul> 
+            {% for item in carrinho %} 
+                
+                
+                <li> {{ item.nome }} - R${{ "%.2f"|format(item.preco) }} x {{ item.quantidade }} 
+                    <a class="btn" href="/add_mais/{{ item.id }}">Adicionar mais</a>
+                    <a class="btn" href="/remove_one/{{ item.id }}">Remover 1</a> 
+                    <a class="btn" href="/remove_all/{{ item.id }}">Remover tudo</a> </li>
+            {% endfor %} 
+        </ul>
+        
+        <p><strong>Quantidade total:</strong> {{ total_qtd }}</p> <p><strong>Total:</strong> R${{ "%.2f"|format(total) }}</p>
+
+        <a class="btn" href="/remove_similar/B">Remover itens com "B"</a>
+
+        <a class="btn" href="/checkout">Finalizar compra</a>
+        <a class="btn" href="/menu">Voltar aos Produtos</a>
+    </main>
+</body>
+</html>
